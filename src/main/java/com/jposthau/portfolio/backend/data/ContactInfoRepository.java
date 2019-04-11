@@ -5,12 +5,12 @@ package com.jposthau.portfolio.backend.data;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.jposthau.portfolio.backend.bo.EducationBO;
+import com.jposthau.portfolio.backend.bo.ContactInfoBO;
 
 /**
  * @author Jordan Posthauer
  *
  */
-public interface ContactInfoRepository extends CrudRepository<EducationBO, Long> {
-
+public interface ContactInfoRepository extends CrudRepository<ContactInfoBO, Long> {
+	
 }

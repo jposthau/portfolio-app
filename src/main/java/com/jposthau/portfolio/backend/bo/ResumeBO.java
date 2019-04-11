@@ -5,28 +5,38 @@ package com.jposthau.portfolio.backend.bo;
 
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
 /**
  * @author Jordan Posthauer
  *
  */
 
-@Entity
 public class ResumeBO {
-	
-	@Id
-	@GeneratedValue
-	private Long id;
-	
+		
 	private ContactInfoBO contactInfo;
 	private List<String> technologies;
 	private List<WorkExperienceBO> workExperiences;
 	private List<EducationBO> educations;
 	private List<ProjectBO> projects;
 	
+	public ResumeBO() {
+	}
+		
+	/**
+	 * @param contactInfo
+	 * @param technologies
+	 * @param workExperiences
+	 * @param educations
+	 * @param projects
+	 */
+	public ResumeBO(ContactInfoBO contactInfo, List<String> technologies, List<WorkExperienceBO> workExperiences,
+			List<EducationBO> educations, List<ProjectBO> projects) {
+		this.contactInfo = contactInfo;
+		this.technologies = technologies;
+		this.workExperiences = workExperiences;
+		this.educations = educations;
+		this.projects = projects;
+	}
+
 	public void addTechnology(String technology) {
 		technologies.add(technology);
 	}
@@ -51,6 +61,14 @@ public class ResumeBO {
 		educations.remove(education);
 	}
 	
+	public void addProject(ProjectBO project) {
+		projects.add(project);
+	}
+	
+	public void removeProject(ProjectBO project) {
+		projects.remove(project);
+	}
+	
 	/**
 	 * @return the contactInfo
 	 */
@@ -62,18 +80,6 @@ public class ResumeBO {
 	 */
 	public void setContactInfo(ContactInfoBO contactInfo) {
 		this.contactInfo = contactInfo;
-	}
-	/**
-	 * @return the education
-	 */
-	public List<EducationBO> getEducation() {
-		return educations;
-	}
-	/**
-	 * @param education the education to set
-	 */
-	public void setEducation(List<EducationBO> educations) {
-		this.educations = educations;
 	}
 	/**
 	 * @return the projects

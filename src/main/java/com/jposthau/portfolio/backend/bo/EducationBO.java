@@ -3,11 +3,11 @@
  */
 package com.jposthau.portfolio.backend.bo;
 
-import java.util.Date;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @author Jordan Posthauer
@@ -15,21 +15,61 @@ import javax.persistence.Id;
  */
 
 @Entity
+@Table(name = "Education")
 public class EducationBO {
 	
 	@Id
 	@GeneratedValue
 	private Long id;
 	
-	private String institution;
-	private LocationBO location;
-	private String degree;
-	private String major;
-	private String minor;
-	private String gpa;
-	private Date startDate;
-	private Date endDate;
+	@Column(name = "school")
+	private String school;
 	
+	@Column(name = "address")
+	private String address;
+	
+	@Column(name = "degree")
+	private String degree;
+	
+	@Column(name = "major")
+	private String major;
+	
+	@Column(name = "minor")
+	private String minor;
+	
+	@Column(name = "gpa")
+	private String gpa;
+	
+	@Column(name = "startDate")
+	private String startDate;
+	
+	@Column(name = "endDate")
+	private String endDate;
+	
+	public EducationBO() {
+	}
+	
+	/**
+	 * @param school
+	 * @param location
+	 * @param degree
+	 * @param major
+	 * @param minor
+	 * @param gpa
+	 * @param startDate
+	 * @param endDate
+	 */
+	public EducationBO(String school, String address, String degree, String major, String minor, String gpa, String startDate, String endDate) {
+		this.school = school;
+		this.address = address;
+		this.degree = degree;
+		this.major = major;
+		this.minor = minor;
+		this.gpa = gpa;
+		this.startDate = startDate;
+		this.endDate = endDate;
+	}
+
 	public Boolean graduated() {
 		if(this.degree != null) {
 			return true;
@@ -38,17 +78,17 @@ public class EducationBO {
 	}
 
 	/**
-	 * @return the institution
+	 * @return the school
 	 */
-	public String getInstitution() {
-		return institution;
+	public String getSchool() {
+		return school;
 	}
 
 	/**
-	 * @param institution the institution to set
+	 * @param school the school to set
 	 */
-	public void setInstitution(String institution) {
-		this.institution = institution;
+	public void setSchool(String school) {
+		this.school = school;
 	}
 
 	/**
@@ -110,43 +150,43 @@ public class EducationBO {
 	/**
 	 * @return the startDate
 	 */
-	public Date getStartDate() {
+	public String getStartDate() {
 		return startDate;
 	}
 
 	/**
 	 * @param startDate the startDate to set
 	 */
-	public void setStartDate(Date startDate) {
+	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
 
 	/**
 	 * @return the endDate
 	 */
-	public Date getEndDate() {
+	public String getEndDate() {
 		return endDate;
 	}
 
 	/**
 	 * @param endDate the endDate to set
 	 */
-	public void setEndDate(Date endDate) {
+	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
 
 	/**
 	 * @return the location
 	 */
-	public LocationBO getLocation() {
-		return location;
+	public String getAddress() {
+		return address;
 	}
 
 	/**
 	 * @param location the location to set
 	 */
-	public void setLocation(LocationBO location) {
-		this.location = location;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 		
 }

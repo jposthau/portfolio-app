@@ -3,11 +3,11 @@
  */
 package com.jposthau.portfolio.backend.bo;
 
-import java.util.List;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @author Jordan Posthauer
@@ -15,22 +15,34 @@ import javax.persistence.Id;
  */
 
 @Entity
+@Table(name = "Project")
 public class ProjectBO {
 
 	@Id
 	@GeneratedValue
 	private Long id;
 	
+	@Column(name = "name")
 	private String name;
-	private String description;
-	private List<String> technologies;
 	
-	public void addTechnology(String technology) {
-		technologies.add(technology);
+	@Column(name = "description")
+	private String description;
+	
+	@Column(name = "technologies")
+	private String technologies;
+	
+	public ProjectBO() {
 	}
 	
-	public void removeTechnology(String technology) {
-		technologies.remove(technology);
+	/**
+	 * @param name
+	 * @param description
+	 * @param technologies
+	 */
+	public ProjectBO(String name, String description, String technologies) {
+		this.name = name;
+		this.description = description;
+		this.technologies = technologies;
 	}
 	
 	/**
@@ -60,13 +72,13 @@ public class ProjectBO {
 	/**
 	 * @return the technologies
 	 */
-	public List<String> getTechnologies() {
+	public String getTechnologies() {
 		return technologies;
 	}
 	/**
 	 * @param technologies the technologies to set
 	 */
-	public void setTechnologies(List<String> technologies) {
+	public void setTechnologies(String technologies) {
 		this.technologies = technologies;
 	}
 	

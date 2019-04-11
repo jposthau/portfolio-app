@@ -3,11 +3,11 @@
  */
 package com.jposthau.portfolio.backend.bo;
 
-import java.util.Date;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @author Jordan Posthauer
@@ -15,18 +15,54 @@ import javax.persistence.Id;
  */
 
 @Entity
+@Table(name = "Work_Experience")
 public class WorkExperienceBO {
 
 	@Id
 	@GeneratedValue
 	private Long id;
 	
+	@Column(name = "role")
 	private String role;
-	private LocationBO location;
-	private Date startDate;
-	private Date endDate;
+	
+	@Column(name = "company")
+	private String company;
+	
+	@Column(name = "address")
+	private String address;
+	
+	@Column(name = "description")
 	private String description;
 	
+	@Column(name = "startDate")
+	private String startDate;
+	
+	@Column(name = "endDate")
+	private String endDate;
+	
+	@Column(name = "technologies")
+	private String technologies;
+	
+	public WorkExperienceBO() {
+	}
+		
+	/**
+	 * @param role
+	 * @param address
+	 * @param startString
+	 * @param endString
+	 * @param description
+	 */
+	public WorkExperienceBO(String role, String company, String address, String startDate, String endDate, String description, String technologies) {
+		this.role = role;
+		this.company = company;
+		this.address = address;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.description = description;
+		this.technologies = technologies;
+	}
+
 	/**
 	 * @return the role
 	 */
@@ -40,39 +76,51 @@ public class WorkExperienceBO {
 		this.role = role;
 	}
 	/**
-	 * @return the location
+	 * @return the company
 	 */
-	public LocationBO getLocation() {
-		return location;
+	public String getCompany() {
+		return company;
 	}
 	/**
-	 * @param location the location to set
+	 * @param company the company to set
 	 */
-	public void setLocation(LocationBO location) {
-		this.location = location;
+	public void setCompany(String company) {
+		this.company = company;
 	}
 	/**
-	 * @return the startDate
+	 * @return the address
 	 */
-	public Date getStartDate() {
+	public String getAddress() {
+		return address;
+	}
+	/**
+	 * @param address the address to set
+	 */
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	/**
+	 * @return the startString
+	 */
+	public String getStartDate() {
 		return startDate;
 	}
 	/**
-	 * @param startDate the startDate to set
+	 * @param startString the startString to set
 	 */
-	public void setStartDate(Date startDate) {
+	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
 	/**
-	 * @return the endDate
+	 * @return the endString
 	 */
-	public Date getEndDate() {
+	public String getEndDate() {
 		return endDate;
 	}
 	/**
-	 * @param endDate the endDate to set
+	 * @param endString the endString to set
 	 */
-	public void setEndDate(Date endDate) {
+	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
 	/**
@@ -87,5 +135,20 @@ public class WorkExperienceBO {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	/**
+	 * @return the technologies
+	 */
+	public String getTechnologies() {
+		return technologies;
+	}
+
+	/**
+	 * @param technologies the technologies to set
+	 */
+	public void setTechnologies(String technologies) {
+		this.technologies = technologies;
+	}
+	
 	
 }

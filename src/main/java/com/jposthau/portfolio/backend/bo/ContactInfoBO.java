@@ -3,9 +3,11 @@
  */
 package com.jposthau.portfolio.backend.bo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @author Jordan Posthauer
@@ -13,18 +15,46 @@ import javax.persistence.Id;
  */
 
 @Entity
+@Table(name = "Contact_Info")
 public class ContactInfoBO {
 	
 	@Id
 	@GeneratedValue
 	private Long id;
 	
+	@Column(name = "firstName")
 	private String firstName;
-	private String lastName;
-	private String phone;
-	private String email;
-	private LocationBO address;
 	
+	@Column(name = "lastName")
+	private String lastName;
+	
+	@Column(name = "phone")
+	private String phone;
+	
+	@Column(name = "email")
+	private String email;
+	
+	@Column(name = "address")
+	private String address;
+	
+	public ContactInfoBO() {
+	}
+	
+	/**
+	 * @param firstName
+	 * @param lastName
+	 * @param phone
+	 * @param email
+	 * @param address
+	 */
+	public ContactInfoBO(String firstName, String lastName, String phone, String email, String address) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phone = phone;
+		this.email = email;
+		this.address = address;
+	}
+
 	/**
 	 * @return the firstName
 	 */
@@ -76,13 +106,13 @@ public class ContactInfoBO {
 	/**
 	 * @return the address
 	 */
-	public LocationBO getAddress() {
+	public String getAddress() {
 		return address;
 	}
 	/**
 	 * @param address the address to set
 	 */
-	public void setAddress(LocationBO address) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
 	
