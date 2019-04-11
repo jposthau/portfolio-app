@@ -38,7 +38,9 @@ public class ResumeBO {
 	}
 
 	public void addTechnology(String technology) {
-		technologies.add(technology);
+		if(technology != null) {
+			technologies.add(technology);
+		}
 	}
 	
 	public void removeTechnology(String technology) {
@@ -46,7 +48,9 @@ public class ResumeBO {
 	}
 	
 	public void addWork(WorkExperienceBO work) {
-		workExperiences.add(work);
+		if(work != null) {
+			workExperiences.add(work);
+		}
 	}
 	
 	public void removeWork(WorkExperienceBO work) {
@@ -54,7 +58,9 @@ public class ResumeBO {
 	}
 	
 	public void addEducation(EducationBO education) {
-		educations.add(education);
+		if(education != null) {
+			educations.add(education);
+		}
 	}
 	
 	public void removeEducation(EducationBO education) {
@@ -134,6 +140,24 @@ public class ResumeBO {
 	 */
 	public void setEducations(List<EducationBO> educations) {
 		this.educations = educations;
+	}
+	
+	public void setEducations(Iterable<EducationBO> itr) {
+		for(EducationBO ed : itr) {
+			this.addEducation(ed);
+		}
+	}
+	
+	public void setProjects(Iterable<ProjectBO> itr) {
+		for(ProjectBO proj : itr) {
+			this.addProject(proj);
+		}
+	}
+	
+	public void setWorkExperiences(Iterable<WorkExperienceBO> itr) {
+		for(WorkExperienceBO work : itr) {
+			this.addWork(work);
+		}
 	}
 	
 }

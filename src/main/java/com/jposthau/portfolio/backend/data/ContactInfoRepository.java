@@ -13,4 +13,6 @@ import com.jposthau.portfolio.backend.bo.ContactInfoBO;
  */
 public interface ContactInfoRepository extends CrudRepository<ContactInfoBO, Long> {
 	
+	ContactInfoBO findTopByOrderByIdDesc();
+	
 }
