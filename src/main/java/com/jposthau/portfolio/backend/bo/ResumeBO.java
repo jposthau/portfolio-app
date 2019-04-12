@@ -3,6 +3,8 @@
  */
 package com.jposthau.portfolio.backend.bo;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -48,6 +50,9 @@ public class ResumeBO {
 	}
 	
 	public void addWork(WorkExperienceBO work) {
+		if(workExperiences == null) {
+			workExperiences = new ArrayList<WorkExperienceBO>();
+		}
 		if(work != null) {
 			workExperiences.add(work);
 		}
@@ -58,6 +63,9 @@ public class ResumeBO {
 	}
 	
 	public void addEducation(EducationBO education) {
+		if(educations == null) {
+			educations = new ArrayList<EducationBO>();
+		}
 		if(education != null) {
 			educations.add(education);
 		}
@@ -68,7 +76,12 @@ public class ResumeBO {
 	}
 	
 	public void addProject(ProjectBO project) {
-		projects.add(project);
+		if(projects == null) {
+			projects = new ArrayList<ProjectBO>();
+		}
+		if(project != null) {	
+			projects.add(project);
+		}
 	}
 	
 	public void removeProject(ProjectBO project) {
@@ -143,20 +156,23 @@ public class ResumeBO {
 	}
 	
 	public void setEducations(Iterable<EducationBO> itr) {
-		for(EducationBO ed : itr) {
-			this.addEducation(ed);
+		Iterator<EducationBO> iterator = itr.iterator();
+		while(iterator.hasNext()) {
+			this.addEducation(iterator.next());
 		}
 	}
 	
 	public void setProjects(Iterable<ProjectBO> itr) {
-		for(ProjectBO proj : itr) {
-			this.addProject(proj);
+		Iterator<ProjectBO> iterator = itr.iterator();
+		while(iterator.hasNext()) {
+			this.addProject(iterator.next());
 		}
 	}
 	
 	public void setWorkExperiences(Iterable<WorkExperienceBO> itr) {
-		for(WorkExperienceBO work : itr) {
-			this.addWork(work);
+		Iterator<WorkExperienceBO> iterator = itr.iterator();
+		while(iterator.hasNext()) {
+			this.addWork(iterator.next());
 		}
 	}
 	

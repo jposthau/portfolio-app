@@ -1,7 +1,14 @@
 package com.jposthau.portfolio.backend.controller;
 
+import java.util.Iterator;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jposthau.portfolio.backend.bo.ContactInfoBO;
@@ -44,7 +51,7 @@ public class HomeController {
 //	}
 	
 	@GetMapping("/resume")
-	public ResumeBO loadResume() {
+	public @ResponseBody ResponseEntity<ResumeBO> loadResume() {
 		
 		ResumeBO resume = new ResumeBO();
 		ContactInfoBO contactInfo = contactRepo.findTopByOrderByIdDesc();
@@ -53,14 +60,11 @@ public class HomeController {
 		Iterable <WorkExperienceBO> work = workRepo.findAll();
 		
 		resume.setContactInfo(contactInfo);
-		while(educations.iterator().hasNext()) {
-			
-		}
-		resume.setEducations();
-		resume.setProjects();
-		resume.setWorkExperiences();
+		resume.setEducations(educations);
+		resume.setProjects(projects);
+		resume.setWorkExperiences(work);
 		
-		return resume;
+		return new ResponseEntity<ResumeBO>(resume, HttpStatus.OK);
 		
 	}
 }
