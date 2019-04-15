@@ -25,6 +25,9 @@ public class ContactInfoBO {
 	@Column(name = "firstName")
 	private String firstName;
 	
+	@Column(name = "middleName")
+	private String middleName;
+	
 	@Column(name = "lastName")
 	private String lastName;
 	
@@ -47,8 +50,9 @@ public class ContactInfoBO {
 	 * @param email
 	 * @param address
 	 */
-	public ContactInfoBO(String firstName, String lastName, String phone, String email, String address) {
+	public ContactInfoBO(String firstName, String middleName, String lastName, String phone, String email, String address) {
 		this.firstName = firstName;
+		this.middleName = middleName;
 		this.lastName = lastName;
 		this.phone = phone;
 		this.email = email;
@@ -67,6 +71,20 @@ public class ContactInfoBO {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+	/**
+	 * @return the middleName
+	 */
+	public String getMiddleName() {
+		return middleName;
+	}
+
+	/**
+	 * @param middleName the middleName to set
+	 */
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
+	}
+
 	/**
 	 * @return the lastName
 	 */

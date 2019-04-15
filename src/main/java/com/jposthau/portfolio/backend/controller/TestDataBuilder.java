@@ -35,7 +35,7 @@ public class TestDataBuilder {
 		String company2 = "Purdue Northwest Information Services";
 		String technologies2 = "<p><u>Technologies: Microsoft Windows 7 &amp; 10, Mac OS, Team Dynamics, Footprints.</u></p>";
 		
-		ContactInfoBO contactInfo = new ContactInfoBO("Jordan", "Posthauer", "765-225-8139", "jlposthauer@gmail.com", "1314 W Ohio St. Chicago, IL 60642");
+		ContactInfoBO contactInfo = new ContactInfoBO("Jordan", "L.", "Posthauer", "765-225-8139", "jlposthau@gmail.com", "1314 W Ohio St. Chicago, IL 60642");
 		WorkExperienceBO workExperience1 = new WorkExperienceBO(role1, company1, "Hammond, IN ", "September 2015", "December 2018", "", technologies1);
 		WorkExperienceBO workExperience2 = new WorkExperienceBO(role2, company2, "Rosemont, IL", "May 2018", "Present", "", technologies2);
 		EducationBO education1 = new EducationBO("Purdue University Northwest", "Hammond, IN", "Bachelor of Science in Engineering", "Computer Engineering", "Computer Science", "", "August 2014", "December 2017");
