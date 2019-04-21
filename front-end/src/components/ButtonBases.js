@@ -7,9 +7,7 @@ import Typography from '@material-ui/core/Typography';
 const styles = theme => ({
   root: {
     display: 'flex',
-    flexWrap: 'wrap',
-    minWidth: 300,
-    width: '100%',
+    maxWidth: '100vw',
   },
   image: {
     position: 'relative',

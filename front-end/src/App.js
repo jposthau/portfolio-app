@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
+import {BrowserRouter, Route} from 'react-router-dom';
 import './App.css';
 import TemporaryDrawer from './components/TemporaryDrawer';
-import ButtonBases from './components/ButtonBases'
-import Bio from './components/Bio'
-import { withStyles } from '@material-ui/core/styles';
+import Home from './components/Home'
+import Resume from './components/Resume'
 
 class App extends Component {
 	render() {
 		return (
-			<div>
-				<TemporaryDrawer/>
-				<div style={{backgroundColor: 'darkGrey', height: '62vh',}}>
-					<Bio/>
+			<BrowserRouter>
+				<div>
+					<TemporaryDrawer/>
+					<Route exact={true} path='/' render={() => (
+						<Home/>
+					)}/>
+					<Route exact={true} path='/resume' render={() => (
+						<Resume/>
+					)}/>
 				</div>
-				<ButtonBases/>
-			</div>
+			</BrowserRouter>
 		);
 	}
 }
