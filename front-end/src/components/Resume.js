@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import PDF from 'react-pdf-js';
 import resumePDF from '../static/Resume.pdf';
-const styles = theme => ({
-  root: {
-    display: 'flex',
-    width: '100vw',
-  },
-});
 
 class Resume extends Component {
 	

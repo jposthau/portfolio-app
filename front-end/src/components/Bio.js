@@ -7,11 +7,7 @@ const styles = theme => ({
   root: {
     display: 'flex',
     maxWidth: '100vw',
-  },
-  image: {
-    position: 'relative',
-    height: '50vh',
-	width: '100vw',
+	minHeight: '300px',
   },
   imageSrc: {
     position: 'absolute',
@@ -35,7 +31,7 @@ const styles = theme => ({
   },
   bioTitle: {
     position: 'relative',
-    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 4}px ${theme.spacing.unit + 6}px`,
+    padding: '10px 10px 0px 10px',
 	color: 'white',
 	fontWeight: 'bold',
 	fontSize:'xx-large',
@@ -43,9 +39,14 @@ const styles = theme => ({
   },
   bioBody: {
     position: 'relative',
-    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 4}px ${theme.spacing.unit + 6}px`,
 	color: 'white',
 	fontWeight: 'bold',
+	padding: '0px 10px 10px 10px',
+	margin: 'auto',
+  },
+  bio: {
+	  display: 'flex',
+	  flexDirection: 'column',
   },
 });
 
@@ -63,16 +64,16 @@ function Bio(props) {
   
   return (
     <div className={classes.root}>
-        <div className={classes.image}>
 			<span className={classes.imageSrc}/>
 			<span className={classes.imageBackdrop}/>
-			<Typography component="span"color="inherit" className={classes.bioTitle}>
-				{bio.title}
-			</Typography>
-			<Typography component="span"color="inherit" className={classes.bioBody}>
-				{bio.body}
-			</Typography>
-        </div>
+			<div className={classes.bio}>
+				<div className={classes.bioTitle}>
+					{bio.title}
+				</div>
+				<div className={classes.bioBody}>
+					{bio.body}
+				</div>
+			</div>
     </div>
   );
   
