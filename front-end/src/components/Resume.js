@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PDF from 'react-pdf-js';
-
+import resumePDF from '../static/Resume.pdf';
 const styles = theme => ({
   root: {
     display: 'flex',
@@ -54,7 +54,7 @@ class Resume extends Component {
 			  className="pdf"
 			  padding="10"
 			  scale="2"
-			  file="resume.pdf"
+			  file={resumePDF}
 			  onDocumentComplete={this.onDocumentComplete}
 			  page={this.state.page}
 			/>
