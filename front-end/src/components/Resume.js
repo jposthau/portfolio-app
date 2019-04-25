@@ -7,12 +7,16 @@ const styles = {
 	pdfContainer: {
 		display: 'flex',
 		justifyContent: 'center',
-		margin: '10px 0 0 0',
-		width: '100vw',
+		width: '100%',
+		paddingTop: '10px',
 	},
 	pdf: {
 		maxWidth: '100vw',
-		height: '100vh',
+		height: '90vh',
+		boxShadow: '10px 10px 8px #888888',
+		borderColor: 'black',
+		borderStyle: 'solid',
+		border: '1px',
 	}
 };
 
