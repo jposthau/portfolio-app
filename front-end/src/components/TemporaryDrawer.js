@@ -30,7 +30,29 @@ const styles = {
 	marginRight: -18,
 	
   },
+  link: {
+	color: 'white',
+	textDecoration: 'none',
+  }
 };
+
+const items = [
+  {
+    url: '/',
+    title: 'Home',
+	icon: <HomeIcon/>
+  },
+  {
+    url: '/resume',
+    title: 'Resume',
+	icon: <DocIcon/>
+  },
+  {
+    url: 'mailto:jposthau@gmail.com',
+    title: 'Contact Me',
+	icon: <MailIcon/>
+  },
+];
 
 class TemporaryDrawer extends React.Component {
   state = {
@@ -51,20 +73,14 @@ class TemporaryDrawer extends React.Component {
 
     const sideList = (
       <div className={classes.list}>
-        <List>
-          {['Home', 'Resume', 'Contact Me'].map((text, index) => (
-			<a href={	index === 2 ? "/contact":
-						index === 1 ? "/resume" : "/"}>
-            <ListItem button key={text} >
-				<ListItemIcon>{	index === 0 ? 	<HomeIcon /> : 
-								index === 1 ? 	<DocIcon /> : 
-												<MailIcon />}
-				</ListItemIcon>
-				<ListItemText primary={text} />
-            </ListItem>
+        <List>{items.map((item) => (
+			<a href={item.url}>
+				<ListItem button key={item.title} >
+					<ListItemIcon>{item.icon}</ListItemIcon>
+					<ListItemText primary={item.title} />
+				</ListItem>
 			</a>
-          ))}
-        </List>
+        ))}</List>
       </div>
     );
 
@@ -73,9 +89,11 @@ class TemporaryDrawer extends React.Component {
 		<div className={classes.root}>
 			<AppBar position="static">
 				<Toolbar variant="dense">
-					<Typography variant="h6" color="inherit">
-						Jordan Posthauer
-					</Typography>
+					<a className={classes.link} href="/">
+						<Typography variant="h6" color="inherit">
+							Jordan Posthauer
+						</Typography>
+					</a>
 					<IconButton className={classes.menuButton} color="inherit" aria-label="Menu"
 					onClick={this.toggleDrawer('right', true)}>
 						<MenuIcon/>

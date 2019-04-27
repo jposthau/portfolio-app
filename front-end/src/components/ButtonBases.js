@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
@@ -7,12 +8,13 @@ import Typography from '@material-ui/core/Typography';
 const styles = theme => ({
   root: {
     display: 'flex',
-    maxWidth: '100vw',
+	flexFlow: 'row wrap',
+    width: '100%',
   },
   image: {
     position: 'relative',
-    height: 200,
-	width: 'calc(100vw/3)',
+    height: 'calc(100vw*(.2))',
+	width: 'calc(100%/3)',
     [theme.breakpoints.down('xs')]: {
     },
     '&:hover, &$focusVisible': {
@@ -47,7 +49,7 @@ const styles = theme => ({
     top: 0,
     bottom: 0,
     backgroundSize: 'contain',
-    backgroundPosition: 'center 40%',
+    backgroundPosition: 'center center',
 	backgroundRepeat: 'no-repeat',
   },
   imageBackdrop: {
@@ -62,7 +64,8 @@ const styles = theme => ({
   },
   imageTitle: {
     position: 'relative',
-    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 4}px ${theme.spacing.unit + 6}px`,
+    padding: '${theme.spacing.unit * 2}px ${theme.spacing.unit * 4}px ${theme.spacing.unit + 6}px',
+	textAlign: 'center',
   },
   imageMarked: {
     height: 3,
@@ -79,14 +82,17 @@ const images = [
   {
     url: '/static/images/grid-list/crosswalk_sign.png',
     title: 'Crosswalk Safety Automation',
+	endpoint: '/projects/crosswalk',
   },
   {
     url: '/static/images/grid-list/rpi_no_background.png',
     title: 'Dog Bark Sensor',
+	endpoint: '/projects/barkSensor',
   },
   {
     url: '/static/images/grid-list/logo.svg',
     title: 'Full Stack Website',
+	endpoint: '/projects/website',
   },
 ];
 
@@ -97,6 +103,7 @@ function ButtonBases(props) {
     <div className={classes.root}>
       {images.map(image => (
         <ButtonBase
+		  component={Link} to={image.endpoint}
           focusRipple
           key={image.title}
           className={classes.image}
@@ -105,12 +112,14 @@ function ButtonBases(props) {
             width: image.width, height: image.height,
           }}
         >
+		<a href={image.endpoint}>
           <span
             className={classes.imageSrc}
             style={{
               backgroundImage: `url(${image.url})`,
             }}
           />
+		</a>
           <span className={classes.imageBackdrop} />
           <span className={classes.imageButton}>
             <Typography

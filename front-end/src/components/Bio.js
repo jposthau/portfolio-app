@@ -5,9 +5,8 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
-    display: 'flex',
-    maxWidth: '100vw',
-	minHeight: '300px',
+    width: '100%',
+	height: 'calc(100vw*(414/958))',
   },
   imageSrc: {
     position: 'absolute',
@@ -16,9 +15,11 @@ const styles = theme => ({
     top: 0,
     bottom: 0,
 	backgroundImage: 'url("https://cdn.wallpapersafari.com/45/3/kFgL2i.jpg")',
-    backgroundPosition: 'center 40%',
+    backgroundPosition: 'center top',
 	backgroundRepeat: 'no-repeat',
 	backgroundSize: 'cover',
+	width: '100%',
+	height: 'auto',
   },
   imageBackdrop: {
     position: 'absolute',
@@ -28,30 +29,32 @@ const styles = theme => ({
     bottom: 0,
     backgroundColor: theme.palette.common.black,
     opacity: 0.4,
+	width: '100%',
+	height: 'auto',
   },
   bioTitle: {
     position: 'relative',
-    padding: '10px 10px 0px 10px',
+    marginTop: 'calc(100vw*(.035))',
 	color: 'white',
 	fontWeight: 'bold',
-	fontSize:'xx-large',
+	fontSize:'calc(100vw*(.035))',
 	textAlign: 'center',
   },
   bioBody: {
     position: 'relative',
 	color: 'white',
 	fontWeight: 'bold',
-	padding: '0px 10px 10px 10px',
-	margin: 'auto',
+	margin: 'auto calc(100vw*(.02)) calc(100vw*(.02)) calc(100vw*(.02))',
+	fontSize:'calc(100vw*(.02))',
   },
   bio: {
 	  display: 'flex',
 	  flexDirection: 'column',
+	  height: 'calc(100vw*(414/958))',
   },
 });
 
 const bio = {
-	backgroundUrl: 'https://cdn.wallpapersafari.com/45/3/kFgL2i.jpg',
 	title: 'Hi! I\'m Jordan, a software developer from Chicago',
 	body: 'I am passionate about solving problems with quality software. '
 		  +'I specialize in backend development using Java, however I have '

@@ -6,14 +6,23 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = {
   root: {
     position: 'absolute',
+	display: 'flex',
+	flexDirection: 'column',
+	width: '100%',
   },
   bioContainer: {
 	  position: 'relative',
-  }
+	  //height: '100%',
+	  width:'100%',
+  },
+  projectsContainer: {
+	  position: 'relative',
+	  //height: '100%',
+	  width:'100%',
+  },
 };
 
 class Home extends Component {
-	
 	render() {
 		const { classes } = this.props;
 		return (

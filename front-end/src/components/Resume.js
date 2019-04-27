@@ -2,21 +2,32 @@ import React, { Component } from 'react';
 import PDF from 'react-pdf-js';
 import resumePDF from '../static/Resume.pdf';
 import { withStyles } from '@material-ui/core/styles';
+import Fab from '@material-ui/core/Fab';
+import IconButton from '@material-ui/core/IconButton';
+import NavigationIcon from '@material-ui/icons/Navigation';
+import { Link } from '@material-ui/core/styles';
 
 const styles = {
 	pdfContainer: {
 		display: 'flex',
 		justifyContent: 'center',
+		flexDirection: 'column',
 		width: '100%',
-		paddingTop: '10px',
+		textAlign: 'center',
+		marginTop: '10px',
 	},
 	pdf: {
-		maxWidth: '100vw',
-		height: '90vh',
+		width: '80vw',
+		height: 'calc(80vw/(1224/1584))',
 		boxShadow: '10px 10px 8px #888888',
 		borderColor: 'black',
 		borderStyle: 'solid',
 		border: '1px',
+		margin: 'auto',
+		
+	},
+	button: {
+		margin: '20px',
 	}
 };
 
@@ -31,6 +42,19 @@ class Resume extends Component {
 			  scale="2"
 			  file={resumePDF}
 			/>
+			<div className={classes.button}>
+				<Fab
+				component={Link} to="/resume.pdf"
+				variant="extended"
+				size="medium"
+				color="primary"
+				aria-label="Add"
+				className={classes.margin}
+				>
+					<NavigationIcon className={classes.extendedIcon} />
+					Download
+				</Fab>
+			</div>
 		  </div>
 		)
 	}
