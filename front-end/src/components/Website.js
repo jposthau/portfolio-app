@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Bio from './Bio'
-import ButtonBases from './ButtonBases'
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
