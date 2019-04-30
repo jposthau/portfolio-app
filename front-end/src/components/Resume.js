@@ -3,8 +3,9 @@ import PDF from 'react-pdf-js';
 import resumePDF from '../static/Resume.pdf';
 import { withStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
-import NavigationIcon from '@material-ui/icons/Navigation';
+import DownIcon from '@material-ui/icons/DownArrow';
 import { Link } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
 const styles = {
 	pdfContainer: {
@@ -43,14 +44,14 @@ class Resume extends Component {
 			/>
 			<div className={classes.button}>
 				<Fab
-					component={Link} to="/resume.pdf"
+					href="/Resume.pdf"
 					variant="extended"
 					size="medium"
 					color="primary"
 					aria-label="Add"
 					className={classes.margin}
 				>
-					<NavigationIcon className={classes.extendedIcon} />
+					<DownIcon className={classes.extendedIcon} />
 					Download
 				</Fab>
 			</div>

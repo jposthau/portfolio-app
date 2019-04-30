@@ -20,6 +20,9 @@ class App extends Component {
 					<Route exact={true} path='/resume' render={() => (
 						<Resume/>
 					)}/>
+					<Route exact={true} path='/resume' render={() => (
+						<Resume/>
+					)}/>
 					<Route exact={true} path='/projects/crosswalk' render={() => (
 						<Crosswalk/>
 					)}/>
