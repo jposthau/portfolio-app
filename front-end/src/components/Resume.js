@@ -3,9 +3,7 @@ import PDF from 'react-pdf-js';
 import resumePDF from '../static/Resume.pdf';
 import { withStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
-import DownIcon from '@material-ui/icons/DownArrow';
 import { Link } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 
 const styles = {
 	pdfContainer: {
@@ -51,7 +49,6 @@ class Resume extends Component {
 					aria-label="Add"
 					className={classes.margin}
 				>
-					<DownIcon className={classes.extendedIcon} />
 					Download
 				</Fab>
 			</div>
