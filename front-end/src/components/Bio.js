@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = theme => ({
   root: {
     width: '100%',
-	height: 'calc(100vw*(414/958))',
+	height: 'calc(100vw*(1181/3870))',
   },
   imageSrc: {
     position: 'absolute',
@@ -13,10 +13,10 @@ const styles = theme => ({
     right: 0,
     top: 0,
     bottom: 0,
-	backgroundImage: 'url("https://cdn.wallpapersafari.com/45/3/kFgL2i.jpg")',
+	backgroundImage: 'url("/static/images/grid-list/skyline.jpg")',
     backgroundPosition: 'center top',
 	backgroundRepeat: 'no-repeat',
-	backgroundSize: 'cover',
+	backgroundSize: 'contain',
 	width: '100%',
 	height: 'auto',
   },
@@ -49,7 +49,7 @@ const styles = theme => ({
   bio: {
 	  display: 'flex',
 	  flexDirection: 'column',
-	  height: 'calc(100vw*(414/958))',
+	  height: 'calc(100vw*(1181/3870))',
   },
 });
 

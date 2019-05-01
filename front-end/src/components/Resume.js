@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import PDF from 'react-pdf-js';
-import resumePDF from '../static/Resume.pdf';
 import { withStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
-import { Link } from '@material-ui/core/styles';
 
 const styles = {
 	pdfContainer: {
@@ -38,11 +36,11 @@ class Resume extends Component {
 			<PDF 
 			  className={classes.pdf}
 			  scale="2"
-			  file={resumePDF}
+			  file="/resume.pdf"
 			/>
 			<div className={classes.button}>
 				<Fab
-					href="/Resume.pdf"
+					href="/resume.pdf"
 					variant="extended"
 					size="medium"
 					color="primary"
@@ -53,7 +51,7 @@ class Resume extends Component {
 				</Fab>
 			</div>
 		  </div>
-		)
+		);
 	}
 }
 

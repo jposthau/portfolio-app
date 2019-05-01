@@ -8,14 +8,17 @@ import Typography from '@material-ui/core/Typography';
 const styles = theme => ({
   root: {
     display: 'flex',
-	flexFlow: 'row wrap',
-    width: '100%',
+    flexWrap: 'wrap',
+    minWidth: 300,
+    height: '100%',
   },
   image: {
     position: 'relative',
-    height: 'calc(100vw*(.2))',
+    height: 'auto',
 	width: 'calc(100%/3)',
     [theme.breakpoints.down('xs')]: {
+    	width: '100% !important', // Overrides inline-style
+    	height: 'auto',
     },
     '&:hover, &$focusVisible': {
       zIndex: 1,
@@ -32,7 +35,6 @@ const styles = theme => ({
   },
   focusVisible: {},
   imageButton: {
-    position: 'absolute',
     left: 0,
     right: 0,
     top: 0,
@@ -65,7 +67,7 @@ const styles = theme => ({
   imageTitle: {
     position: 'relative',
     padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 4}px ${theme.spacing.unit + 6}px`,
-	textAlign: 'center',
+    textAlign: 'center',
   },
   imageMarked: {
     height: 3,
@@ -108,9 +110,7 @@ function ButtonBases(props) {
           key={image.title}
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
-          style={{
-            width: image.width, height: image.height,
-          }}
+          
         >
 		<a href={image.endpoint}>
           <span

@@ -23,7 +23,7 @@ const styles = {
     width: 'auto',
   },
   root: {
-    flexGrow: 1,
+    //flexGrow: 1,
   },
   menuButton: {
     marginLeft: 'auto',

@@ -5,20 +5,20 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
   root: {
-    position: 'absolute',
+    //position: 'absolute',
 	display: 'flex',
 	flexDirection: 'column',
 	width: '100%',
+	height: '100%',
   },
   bioContainer: {
 	  position: 'relative',
-	  //height: '100%',
-	  width:'100%',
+	  //flexGrow: '1',
   },
   projectsContainer: {
 	  position: 'relative',
-	  //height: '100%',
 	  width:'100%',
+	  flexGrow: '1',
   },
 };
 
