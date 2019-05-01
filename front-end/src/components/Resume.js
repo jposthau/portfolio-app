@@ -36,11 +36,11 @@ class Resume extends Component {
 			<PDF 
 			  className={classes.pdf}
 			  scale="2"
-			  file="/resume.pdf"
+			  file="/Resume.pdf"
 			/>
 			<div className={classes.button}>
 				<Fab
-					href="/resume.pdf"
+					href="/Resume.pdf"
 					variant="extended"
 					size="medium"
 					color="primary"
