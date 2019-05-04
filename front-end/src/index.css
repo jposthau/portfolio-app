@@ -12,3 +12,66 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: auto;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex-grow: 1;
+  background-color: #f1f1f1;
+  padding: 20px;
+  height: 100%;
+  word-wrap: break-word;
+  max-width: 30vw;
+}
+
+.img {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+.imgContainer {
+	flex-grow: 8;
+	padding: 20px;
+	background-color: #f1f1f1;
+	max-width: 70vw;
+}
+
+@media screen and (max-width: 500px) {
+  .row {  
+    flex-direction: column;
+    width: 100%;
+  }
+  .side {
+  	height: auto;
+  	max-width: 100%;
+  	max-width: calc(100% - 40px);
+  }
+  .imgContainer {
+  	height: auto;
+  	width: 100%;
+  	max-width: calc(100% - 40px);
+  }
+}
+
+.barkSensor{
+  background-image: url('/static/images/bark_sensor/schematic.jpg');
+}
+
+.crosswalk{
+  background-image: url('/static/images/bark_sensor/schematic.jpg');
+}
+
+.website{
+  background-image: url('/static/images/bark_sensor/schematic.jpg');
+}

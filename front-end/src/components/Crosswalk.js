@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import Project from './Project';
 
-const styles = {
-  root: {
-    position: 'absolute',
-	display: 'flex',
-	flexDirection: 'column',
-	width: '100%',
-  },
-
-};
+const title = <h2>Bicycle Crosswalk Safety Automation</h2>;
+const desc = <p>Brief discription of the project.............................................................................................................................................................................................................................................</p>;
+const img = <div class='img crosswalk'></div>;
 
 class Crosswalk extends Component {
+	constructor(props) {
+		super(props);
+	}
 	render() {
-		const { classes } = this.props;
 		return (
-			<div className={classes.root}>
-				Crosswalk
-			</div>
+			<Project
+				title={title}
+				desc={desc}
+				img={img}
+			/>
 		);
 	}
 }
 
-export default withStyles(styles)(Crosswalk);
+export default Crosswalk;

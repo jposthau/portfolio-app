@@ -1,0 +1,38 @@
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: auto;
+};
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  color: red;
+  flex-grow: 1;
+  backgroundColor: #f1f1f1;
+  padding: 20px;
+  height: 100%;
+  [theme.breakpoints.down(xs)]: {
+	flexGrow: 1;
+   	width: 100% !important;
+   	height: auto;
+  };
+};
+
+.img {
+  flex-grow: 8;
+  backgroundSize: contain;
+  backgroundPosition: center center;
+  backgroundRepeat: no-repeat;
+  [theme.breakpoints.down(xs)]: {
+	flexGrow: 8;
+   	width: 100% !important;
+   	height: auto;
+  };
+};
+
+.barkSensor{
+  backgroundImage: url('/static/images/bark_sensor/schematic.jpg');
+};
