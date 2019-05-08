@@ -69,9 +69,31 @@ code {
 }
 
 .crosswalk{
-  background-image: url('/static/images/bark_sensor/schematic.jpg');
+  background-image: url('/static/images/crosswalk/Enclosure v11.png');
 }
 
 .website{
-  background-image: url('/static/images/bark_sensor/schematic.jpg');
+  background-image: url('/static/images/grid-list/logo.svg');
+}
+
+.pdfContainer {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+},
+.pdf {
+	width: 80vw;
+	height: calc(80vw/(1224/1584));
+	box-shadow: 10px 10px 8px #888888;
+	border-color: black;
+	border-style: solid;
+	border: 1px;
+	margin: auto;
+	
+},
+.downloadButton {
+	margin: 20px;
 }

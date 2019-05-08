@@ -19,11 +19,13 @@ const styles = {
 		  header: {
 			  //position: 'relative',
 			  //flexGrow: '1',
+			  height:'auto',
 		  },
 		  body: {
 			  //position: 'relative',
 			  width:'100%',
-			  flexGrow: '1',
+			  height:'100%',
+			  //flexGrow: '10',
 		  },
 		};
 

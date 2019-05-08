@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import React from 'react';
 
 export default function Project(props) {
-	var img: '/static/images/bark_sensor/schematic.jpg';
 	return (
 		<div class='row'>
 		  <div class='side'>

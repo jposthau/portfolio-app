@@ -6,9 +6,6 @@ const desc = <p>Brief discription of the project................................
 const img = <div class='img barkSensor'></div>;
 
 class BarkSensor extends Component {
-	constructor(props) {
-		super(props);
-	}
 	render() {
 		return (
 			<Project

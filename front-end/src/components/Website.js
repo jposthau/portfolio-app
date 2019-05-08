@@ -6,9 +6,6 @@ const desc = <p>Check out my GitHub repo <a href='https://github.com/jposthau/po
 const img = <div class='img website'></div>;
 
 class Website extends Component {
-	constructor(props) {
-		super(props);
-	}
 	render() {
 		return (
 			<Project
