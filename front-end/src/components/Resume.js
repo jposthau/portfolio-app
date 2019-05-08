@@ -3,7 +3,6 @@ import PDFViewer from './PDFViewer'
 import PDFJSBackend from '../backends/pdfjs'
 
 class Resume extends Component {
-	 	
 	render() {
 		return (
 			<PDFViewer
