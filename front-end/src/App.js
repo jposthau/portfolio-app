@@ -13,19 +13,14 @@ const styles = {
 		  root: {
 			display: 'flex',
 			flexDirection: 'column',
-			width: '100%',
+			//width: '100%',
 			height: '100vh',
 		  },
 		  header: {
-			  //position: 'relative',
-			  //flexGrow: '1',
-			  height:'auto',
 		  },
 		  body: {
-			  //position: 'relative',
 			  width:'100%',
-			  height:'100%',
-			  //flexGrow: '10',
+			  flex: '1',
 		  },
 		};
 

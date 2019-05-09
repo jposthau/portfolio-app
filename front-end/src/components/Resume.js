@@ -5,10 +5,12 @@ import PDFJSBackend from '../backends/pdfjs'
 class Resume extends Component {
 	render() {
 		return (
-			<PDFViewer
-				backend={PDFJSBackend}
-				src='/Resume.pdf'
-			/>
+			<div class='pdfContainer'>
+				<PDFViewer
+					backend={PDFJSBackend}
+					src='/Resume.pdf'>
+				</PDFViewer>
+			</div>
 		);
 	}
 }

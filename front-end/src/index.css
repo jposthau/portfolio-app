@@ -17,7 +17,6 @@ code {
 .row {  
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
   width: auto;
 }
 
@@ -27,7 +26,6 @@ code {
   flex-grow: 1;
   background-color: #f1f1f1;
   padding: 20px;
-  height: 100%;
   word-wrap: break-word;
   max-width: 30vw;
 }
@@ -77,23 +75,11 @@ code {
 }
 
 .pdfContainer {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	width: 100%;
-	text-align: center;
-	margin-top: 10px;
-},
-.pdf {
-	width: 80vw;
-	height: calc(80vw/(1224/1584));
-	box-shadow: 10px 10px 8px #888888;
-	border-color: black;
-	border-style: solid;
-	border: 1px;
-	margin: auto;
+	height: 100%;
+	margin-bottom: 0;
 	
-},
+}
+
 .downloadButton {
 	margin: 20px;
 }

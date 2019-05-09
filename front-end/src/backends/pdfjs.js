@@ -5,6 +5,8 @@ export default class PDFJs {
     iframe.src = `/pdfjs-2.0.943-dist/web/viewer.html?file=${source}`;
     iframe.width = '100%';
     iframe.height = '100%';
+    iframe.frameBorder='0';
+    iframe.display='block';
 
     element.appendChild(iframe);
   }
